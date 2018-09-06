@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="assets_backend" name="web_widget_ncf_manager assets" inherit_id="web.assets_backend">
+    <!--<template id="assets_backend" name="web_widget_ncf_manager assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script src="/ncf_dgii_reports/static/src/js/ncf_dgii_reports.js" type="text/javascript"></script>
             <link rel="stylesheet" type="text/css" href="/ncf_dgii_reports/static/src/css/ncf_dgii_reports.css"/>
         </xpath>
-    </template>
+    </template>-->
+
 
     <data>
+        <menuitem id="ncf_report_menu" name="DGII 2" parent="account.menu_finance" sequence="7" groups="account.group_account_user,account.group_account_manager,account.group_account_invoice"/>
         <record id="dgii_report_form" model="ir.ui.view">
             <field name="name">Dgii report form</field>
             <field name="model">dgii.report</field>
@@ -509,7 +511,7 @@
                                 </field>
                             </page>
                         </notebook>
-                        <widget type="opl"/>
+                        <!--<widget type="opl"/>-->
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
@@ -558,28 +560,26 @@
 
         <!-- This Menu Item must have a parent and an action -->
         <!-- parent="ncf_manager.marcos_account_dgii_menu" -->
-        <menuitem action="dgii_report_action" id="marcos_ncf_dgii_report_wizard_menu"                  
-                  parent="account.account_account_menu"
-                  sequence="2"/>
+        <menuitem action="dgii_report_action" id="marcos_ncf_dgii_report_wizard_menu" parent="ncf_report_menu" sequence="2"/>
 
-        <record id="dgii_eport_purchase_line_action" model="ir.actions.act_window">
+        <!--<record id="dgii_eport_purchase_line_action" model="ir.actions.act_window">
             <field name="name">Consultas lineas del 606</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">dgii.report.purchase.line</field>
             <field name="view_mode">pivot,graph</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
+                <p class="oe_view_nocontent_create">-->
                     <!-- Add Text Here -->
-                </p>
-                <p>
+                    <!--</p>
+                <p>-->
                     <!-- More details about what a user can do with this object will be OK -->
-                </p>
+                    <!--</p>
             </field>
-        </record>
+        </record>-->
 
         <!-- This Menu Item must have a parent and an action -->
         <!-- parent="marcos_account_dgii_menu" -->
-        <menuitem id="dgii_eport_purchase_line_menu" name="Consultas lineas del 606" parent="marcos_ncf_dgii_report_wizard_menu"
+        <!--<menuitem id="dgii_eport_purchase_line_menu" name="Consultas lineas del 606" parent="marcos_ncf_dgii_report_wizard_menu"
                   action="dgii_eport_purchase_line_action" sequence="3"/>
 
         <record id="dgii_report_sale_line_action" model="ir.actions.act_window">
@@ -588,19 +588,19 @@
             <field name="res_model">dgii.report.sale.line</field>
             <field name="view_mode">pivot,graph</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
+                <p class="oe_view_nocontent_create">-->
                     <!-- Add Text Here -->
-                </p>
-                <p>
+                    <!--</p>
+                <p>-->
                     <!-- More details about what a user can do with this object will be OK -->
-                </p>
+                    <!--</p>
             </field>
-        </record>
+        </record>-->
 
         <!-- This Menu Item must have a parent and an action -->
         <!-- parent="marcos_account_dgii_menu" -->
-        <menuitem id="dgii_report_sale_line_menu" name="Consultas lineas del 607" parent="marcos_ncf_dgii_report_wizard_menu"
-                  action="dgii_report_sale_line_action" sequence="4"/>
+        <!--<menuitem id="dgii_report_sale_line_menu" name="Consultas lineas del 607" parent="marcos_ncf_dgii_report_wizard_menu"
+            action="dgii_report_sale_line_action" sequence="4"/>-->
 
 
     </data>

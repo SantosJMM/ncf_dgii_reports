@@ -59,8 +59,8 @@ except(ImportError, IOError) as err:
 
 class DgiiReport(models.Model):
     _name = "dgii.report"
-    _inherit = ['mail.thread', 'ir.needaction_mixin']
-    _order = "name"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    # _order = "name"
 
     @api.multi
     @api.depends("purchase_report")
